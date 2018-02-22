@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Housing Programs</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <!-- Housing Programs Form -->
+            <form class="well form-horizontal" name="form" method="post"  id="program-form">
+                <h1>City of Milwaukee Housing Program Eligibility</h1>
+                <fieldset>
+                    <legend></legend>
+                    <!-- Ownership-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Do you own or rent this property?</label>
+                        <div class="col-md-4">
+                            <div class="radio" id="ownership">
+                                <label>
+                                    <input type="radio" name="ownership" value="own"/>Own
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ownership" value="rent"/>Rent
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- House Type-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">What type of house is this?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="propertyType" value="single"/>Single Family
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="propertyType" value="duplex"/>Duplex
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="propertyType" value="triplex"/>Triplex
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="propertyType" value="other"/>Other
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Occupancy Status-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Are you the occupant of the property?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="occupancy" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="occupancy" value="no"/>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Building Code Orders-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Do you have open building code orders from the Department of Neighborhood Services?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buildingCode" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buildingCode" value="no"/>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Foreclosure-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Is the property in foreclosure?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="foreclosure" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="foreclosure" value="no"/>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mortgage Payments-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Are mortgage payments up to date on this property?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="mortgage" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="mortgage" value="no"/>No
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="mortgage" value="noMortgage"/>No Mortgage
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="mortgage" value="plan"/>Approved Payment Plan
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Utility Payments-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Are utility payments up to date on this property?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="utilities" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="utilities" value="no"/>No
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="utilities" value="plan"/>Approved Payment Plan
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Property Tax-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Are you current on property taxes on this property?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="propertyTax" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="propertyTax" value="no"/>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Homeowners insurance-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Do you currently have homeowners insurance on this property?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="homeownersInsurance" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="homeownersInsurance" value="no"/>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Litigation/Condemnation-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Is the property in litigation or subject to a condemnation action?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="litigation" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="litigation" value="no"/>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Years Owned/Rented-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Have you lived at this location for 5 or more years?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="years" value="yes"/>Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="years" value="no"/>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Family Size-->
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">How many People Live in the property/unit?</label>
+                           <div class="col-md-4 selectContainer">
+                               <div class="input-group">
+                                   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                   <select name="familySize" class="form-control selectpicker" >
+                                       <option value="" ></option>
+                                       <option value="0">0</option>
+                                       <option value="1">1</option>
+                                       <option value="2">2</option>
+                                       <option value="3">3</option>
+                                       <option value="4">4</option>
+                                       <option value="5">5</option>
+                                       <option value="6">6</option>
+                                       <option value="7">7</option>
+                                       <option value="8">8+</option>
+                                   </select>
+                               </div>
+                           </div>
+                        </div>
+                    <!-- Household Income-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" >What is your total household annual income?</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                                <input name="income" placeholder="$" class="form-control" type="number">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Address # -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" >What is your address number?</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                <input name="addressNumber" placeholder="Example: 3350" class="form-control" type="number">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Address street name -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" >What is your street name?</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                <input name="addressName" placeholder="Example: 50th" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Address zip -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" >What is your zip code?</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                <input name="zip" placeholder="Example: 53202" class="form-control" type="number">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"></label>
+                        <div class="col-md-4">
+                            <button id="button" class="btn btn-warning">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!-- Program Cards -->
+        <div class="container">
+            <!-- Compliance Loan Program -->
+            <div class="well card hidden" id="compliance-loan-program">
+                <div class="card-block">
+                    <h3 class="card-title">Compliance Loan Program</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">City of Milwaukee</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The Compliance Loan Program, administered by the Department of Neighborhood Services, provides eligible homeowners with a 0% interest, deferred payment loan to correct any oustanding code violations. The loans are secured by a mortgage which will be paid when the property is transfered or sold. CLP is a full-service program and provides approved contractors as well as project oversight with a licensed inspector.</p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">The total cost of repairs cannot exceed $15,000</li>
+                        <li class="list-group-item">Owner cannot be in any chapter of bankruptcy other than Chapter 13</li>
+                        <li class="list-group-item">Total Household Income must be no greater than 50% County Median Income(CMI)</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Citywide</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">City of Milwaukee Department of Neighborhood Services</p>
+                    <p class="card-text">841 N. Broadway, Room 105 Milwaukee, WI 53202</p>
+                    <p class="card-text">(414) 286-2567</p>
+                    <p class="card-text">soconn@milwaukee.gov</p>
+                    <a href="http://www.milwaukee.gov/CLP" target="_blank" class="card-link">www.milwaukee.gov/CLP</a>
+                </div>
+            </div>
+            <!-- STRONG Homes Loan -->
+            <div class="well card hidden" id="strong-homes-loan">
+                <div class="card-block">
+                    <h3 class="card-title">STRONG Homes Loan</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">City of Milwaukee</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">Through the Neighborhood Improvement Development Corporation, the STRONG Homes Loan Program offers partially forgivable loans of up to $20,000 throughout the city of Milwaukee.* Loans can be used to make emergency and essential home repairs and address building code orders. Loans are repayable, with a deferred payment option available for homeowners who are low income and elderly or disabled. Technical assistance will be provided to homeowners under that program to assist with rehabilitation projects.</p>
+                    <p class="card-text"><em>* Forgivable loans may be limited if applicant has recieved previous forgivable funds from the City of Milwaukee</em></p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Household income qualifications (see income guidelines at the website provided below)</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Citywide</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">Neighborhood Improvement Development Corporation</p>
+                    <p class="card-text">809 North Broadway, 3rd Floor, Milwaukee, WI 53202</p>
+                    <p class="card-text">(414) 286-5610</p>
+                    <p class="card-text">nidc@milwaukee.gov</p>
+                    <a href="http://www.milwaukee.gov/strongloan" target="_blank" class="card-link">www.milwaukee.gov/strongloan</a>
+                </div>
+            </div>
+            <!-- Targeted Investment Neighborhoods (TINS)-->
+            <div class="well card hidden" id="targeted-investment-neighborhoods">
+                <div class="card-block">
+                    <h3 class="card-title">Targeted Investment Neighborhoods (TINS)</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">City of Milwaukee</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program provides no interest and forgivable loans for property improvements in targeted geographical areas. Assistance is available to both homeowners and responsible rental property owners. Technical assistance is also provided to help create a scope of work, obtain bids for the work and manage the construction process.</p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements for Homeowners</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Household Income must be less than 80% of Area Median Income (see chart at website provided below)</li>
+                        <li class="list-group-item">Flexible underwriting guidelines, but must have a history of paying bills on time</li>
+                    </ul>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements for Rental Property Owners</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Must have a responsible track record of owning and managing rental property in the city</li>
+                        <li class="list-group-item">Must have attended City of Milwaukee Landlord Training Class</li>
+                        <li class="list-group-item">Rental Property owners must match the amout of assistance they are receiving on a dollar for dollar basis and show proof of matching funds</li>
+                        <li class="list-group-item">Units must generally have two or more bedrooms</li>
+                        <li class="list-group-item">Units must be rented to, and affordable to families earning under 60% of Area Median Income for five years after closinng (see chart at website provided below)</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">The program is available in nine targeted investment neighborhoods (see website provided below)</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">Neighborhood Improvement Development Corporation</p>
+                    <p class="card-text">809 N. Broadway, Milwaukee, WI 53202</p>
+                    <p class="card-text">(414) 286-5608</p>
+                    <a href="http://www.milwaukee.gov/tins" target="_blank" class="card-link">www.milwaukee.gov/tins</a>
+                </div>
+            </div>
+            <!-- Neighborhood Improvement Project (NIP) -->
+            <div class="well card hidden"  id="neighborhood-improvement-project">
+                <div class="card-block">
+                    <h3 class="card-title">Neighborhood Improvement Project (NIP)</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">City of Milwaukee</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program assists eligible owner occupants in repairing their homes. The minimum scope of work to qualify for the program is $5,000, with a maximum of $24,500 per home. Eligible work includes code violations, maintenance and mechanical work. Assistance is provided through local NIP service agencies (listed at the website provided below) working with local contractors.</p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Household Income must be at or below 60% of Area Median Income (see website provided below)</li>
+                        <li class="list-group-item">Must not have recieved prior NIP or other City home repair assistance</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Community Development Block Grant (CDBG) Area (see map at website provided below)</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">City of Milwaukee Department of Neighborhood Services</p>
+                    <p class="card-text">841 N. Broadway, 10th Floor, WI 53202</p>
+                    <p class="card-text">(414) 286-2163</p>
+                    <a href="http://www.milwaukee.gov/nip" target="_blank" class="card-link">www.milwaukee.gov/nip</a>
+                </div>
+            </div>
+            <!-- Me^2 Milwaukee Energy Efficiency Program -->
+            <div class="well card hidden" id="milwaukee-energy-efficiency-program">
+                <div class="card-block">
+                    <h3 class="card-title">Me<sup>2</sup> Milwaukee Energy Efficiency Program</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">City of Milwaukee</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program provides low interest loans of up to $15,000 in partnership with Summit Credit Union to make energy efficient improvements to your home. Eligible improvements include attic and wall insulation, air sealing (caulking and sealing gaps that let in outside air), ENERGY STAR® rated windows, Focus on Energy eligible heating and cooling equipment, hot water heaters, heat pumps and supporting improvements (up to 20% of total loan, e.g. minor electrical upgrades).</p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Owner of building must be listed as an individual and not as a trust, LLC or form of business</li>
+                        <li class="list-group-item">No delinquent property taxes due to the City of Milwaukee</li>
+                        <li class="list-group-item">Work must be performed by a participating Me<sup>2</sup> contractor</li>
+                        <li class="list-group-item">No maximum income limits</li>
+                    </ul>
+                    <h4 class="card-subtitle">To Qualify for a Me<sup>2</sup> loan through Summit  Credit  Union, the applicant must</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Be employed for the past 12-24 months or have other stable income</li>
+                        <li class="list-group-item">Have a debt to income ratio less than 45%</li>
+                        <li class="list-group-item">No minimum credit score requirement</li>
+                        <li class="list-group-item">Applicants with lower credit scores must have longer recent employment history and lower outstanding debt obligations</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Citywide</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">City of Milwaukee Office of Environmental Sustainability</p>
+                    <p class="card-text">200 E. Wells Street, Milwaukee, WI 53202</p>
+                    <p class="card-text">(414) 286-3475</p>
+                    <a href="http://www.smartenergypays.com/homeowners" target="_blank" class="card-link">www.smartenergypays.com/homeowners</a>
+                </div>
+            </div>
+            <!-- Milwaukee Shines Program -->
+            <div class="well card hidden" id="milwaukee-shines-program">
+                <div class="card-block">
+                    <h3 class="card-title">Milwaukee Shines Program</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">City of Milwaukee</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program provides low interest loans of up to $20,000 in partnership with Summit Credit Union to make solar energy improvements to your home. Milwaukee shines also helps residents learn about solar technologies, find qualified installers and connect with financial incentives.</p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">No maximum income limits</li>
+                        <li class="list-group-item">Must meet loan underwriting guidelines for Summit Credit Union</li>
+                        <li class="list-group-item">Work must be performed by a Focus on Energy Residential Ally solar installer</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Citywide</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">City of Milwaukee Office of Environmental Sustainability</p>
+                    <p class="card-text">200 E. Wells Street, Milwaukee, WI 53202</p>
+                    <p class="card-text">(414) 286-5593</p>
+                    <a href="http://www.milwaukeeshines.com" target="_blank" class="card-link">www.milwaukeeshines.com</a>
+                </div>
+            </div>
+            <!-- Weatherization Program -->
+            <div class="well card hidden" id="weatherization-program">
+                <div class="card-block">
+                    <h3 class="card-title">Weatherization Program</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">Social Development Commission</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program provides weatherization improvements to tenants and homeowners, including insulation, installation of energy efficient lighting, furnace repair and replacement, and testing and replacing refrigerators. </p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Must apply to SDC for Energy Assistance before applying to program (call 906-2800)</li>
+                        <li class="list-group-item">The house or apartment unit may not have been previously weatherized</li>
+                        <li class="list-group-item">For rental properties, at least 50% of the buildings tenants must qualify for energy assistance</li>
+                        <li class="list-group-item">Interested applicants cannot exceed income limits (see website provided below)</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Citywide</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">SDC Weatherization Program</p>
+                    <p class="card-text">4041 N. Richards Street, Milwaukee, WI 53210</p>
+                    <p class="card-text">(414) 344-9010</p>
+                    <a href="http://www.cr-sdc.org" target="_blank" class="card-link">www.cr-sdc.org (click on programs)</a>
+                </div>
+            </div>
+            <!-- Rebuilding Together Greater Milwaukee / Revitalize Milwaukee -->
+            <div class="well card hidden" id="rebuilding-together-greater-milwaukee">
+                <div class="card-block">
+                    <h3 class="card-title">Revitalize Milwaukee</h3>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">Rebuilding Together Greater Milwaukee preserves affordable housing and revitalizes vulnerable neighborhoods throughout the Milwaukee and Waukesha counties. The program provides FREE, professional home restoration, vital safety repairs and life-changing accessibility modifications for low-incone homeowners who are senior citizens, veterans and/or persons with disibilities.</p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Homeowners must be 60 years of age or older and low-income OR a person living with a disability and low-income OR a veteran who is low-income</li>
+                        <li class="list-group-item">Homeowner of a single family home or jointly owned duplex home where both owners live and qualify in Milwaukee or Waukesha County (no condos, apartments, rental property, partly rented duplexes or mobile homes)</li>
+                        <li class="list-group-item">Homeowner's property must not be held in trust or a lide estate property</li>
+                        <li class="list-group-item">Homeowner has not recieved repaiors from RTGM in the past 2 years (this does not include emergency visits)</li>
+                        <li class="list-group-item">Homeowner must not own any other property</li>
+                        <li class="list-group-item">Homeowner cannot have a daycare or any other home-based business operating in the residence</li>
+                        <li class="list-group-item">Household income must fall within low-income guidelines based on 50% County Mean Income Limits (see website provided below)</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Citywide</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">Rebuilding Together Greather Milwaukee</p>
+                    <p class="card-text">700 W. Virginia, Suite 306, Milwaukee, WI 53204</p>
+                    <p class="card-text">(414) 319-9828</p>
+                    <a href="http://www.freehomerepairs.org/application-1/" target="_blank" class="card-link">www.freehomerepairs.org/application-1/</a>
+                </div>
+            </div>
+            <!-- Home Preservation Program -->
+            <div class="well card hidden" id="home-preservation-program">
+                <div class="card-block">
+                    <h3 class="card-title">Home Preservation Program</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">Milwaukee Habitat for Humanity</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program provides zero percent interest loans of up to $15,000 for critical and minor home repairs. Priority is given to seniors, persons with disabilities, military veterans, single-parents and large families (five or more residents). Home Preservation services help preserve affordable housing in existing communities and often help homeowners continue to live independently and securely in their homes.</p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Must have a stable source of income and a reasonable credit history</li>
+                        <li class="list-group-item">Must be willing to perform sweat equity and complete financial education requirements</li>
+                        <li class="list-group-item">Applicants must have household income less than 80% of Area Median Income (see website provided below)</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Washington Park Neighborhood</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">Habitat for Humanity</p>
+                    <p class="card-text">3726 N. Booth Street, Milwaukee, WI 53212</p>
+                    <p class="card-text">(414) 562-6100</p>
+                    <a href="http://www.milwaukeehabitat.org/partner/repair-your-home" target="_blank" class="card-link">www.milwaukeehabitat.org/partner/repair-your-home</a>
+                </div>
+            </div>
+            <!-- Washington Park Neighborhood Improvement District -->
+            <div class="well card hidden" id="washington-park-neighborhood-improvement-project">
+                <div class="card-block">
+                    <h3 class="card-title">Neighborhood Improvement District</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">Washington Park</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program provides grants to homeowners for up to $7,500 for home repairs and covers a nuimber of eligible activites including the following:</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Structural Repairs: </strong>Including roof, porch, foundation, and other structural repairs</li>
+                        <li class="list-group-item"><strong>Energy Effiency Improvements: </strong>Including window replacement, HVAC upgrades, insulation, and alternative energy improvements</li>
+                        <li class="list-group-item"><strong>Water Efficiency Improvements: </strong>Including replacement of water leterals, old piping, low-flow fixtures and other water effiency improvements</li>
+                        <li class="list-group-item"><strong>Curb Appeal: </strong>Including painting, tuck-pointing, lighting and other curb appeal projects</li>
+                        <li class="list-group-item"><strong>Code Compliance: </strong>Including all repairs necessary to remedy an existing code violation</li>
+                        <li class="list-group-item"><strong>Safety Improvements: </strong>Including lighting, fencing, garages and other safety projects <br> <em>Exclusions: appliances, building additions other than garages, landscaping, interior decorative improvements (i.e. new carpets, countertops, etc.)</em></li>
+                    </ul>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">25%  match required from homeowner</li>
+                        <li class="list-group-item">No income limits</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Washington Park Neighborhood</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">United Methodist Children's Services</p>
+                    <p class="card-text">3940 W. Lisbon Avenue, Milwaukee, WI 53208</p>
+                    <p class="card-text">(414) 344-1818</p>
+                    <a href="http://city.milwaukee.gov/WashingtonPark#.WfeBZROPKRs" target="_blank" class="card-link">city.milwaukee.gov/WashingtonPark#.WfeBZROPKRs</a>
+                </div>
+            </div>
+            <!-- Sherman Park Neighborhood Improvement District -->
+            <div class="well card hidden" id="sherman-park-neighborhood-improvement-project">
+                <div class="card-block">
+                    <h3 class="card-title">Neighborhood Improvement District</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">Sherman Park</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program provides grants of up to $5,000 for basic income repairs, energy conservation improvements, code violations, safety improvements and work that involves the exterior apperance of the home.</p>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">No income limits, but the program has different matching fund requirements depending on income</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">Sherman Park Neighborhood</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">Sherman Park Community Association</p>
+                    <p class="card-text">3526 W. Fond du Lac Avenue, Milwaukee, WI 53216</p>
+                    <p class="card-text">(414) 444-9803 Ext. 100</p>
+                    <a href="http://city.milwaukee.gov/ShermanPark#.WficZWhSyUl" target="_blank" class="card-link">city.milwaukee.gov/ShermanPark#.WficZWhSyUl</a>
+                </div>
+            </div>
+            <!-- Lead Poisoning Prevention Program -->
+            <div class="well card hidden" id="lead-poisoning-prevention-program">
+                <div class="card-block">
+                    <h3 class="card-title">Lead Poisoning Prevention Program</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">City of Milwaukee Health Department</h6>
+                    <h4 class="card-subtitle">The Program</h4>
+                    <p class="card-text">The program provides resources to abate lead based paint hazards in windows for property owners.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><em><strong>Note: </strong>If your home was built before 1978 it may contain lead paint and homes built before 1950 usually have the highest concentrations of lead paint. Repairing and remodeling painted surfaces in homes built before 1978, if done in an unsafe manner, can be hazardous to children. if lead dust is swallowed or breathed, it can cause lead poisoning, the #1 environmental health problem facing American children today. <br>        <br>Lead poisoning, even at low levels in a child's body, can cause permanent brain damage and negatively affect children's behaviors and their ability to learn. Young children and pregnant women are at greatest risk. Protect your family by following safe remodeling procedures - whether you do the work yourself or hire a contractor to do it for you.</em></li>
+                    </ul>
+                    <h4 class="card-subtitle">Additional Eligibility/Participation Requirements</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Property must have been built before 1950</li>
+                        <li class="list-group-item">For owner occupied properties, children under age 3 must reside in the property</li>
+                        <li class="list-group-item">Owner is willing to pay up to 20% of costs plus $57 permit fee</li>
+                        <li class="list-group-item">Owner must be available for inspection with lead inspector</li>
+                        <li class="list-group-item">For rental properties, tenants must have income below 80% of Area Median Income (see website provided below) and property owner must agree to rent to income eligible families for at least three years after hazards are abated.</li>
+                    </ul>
+                    <h4 class="card-subtitle">Area of Availability</h4>
+                    <p class="card-text">This program provides resources for pre-1950 properties in zip codes: 53206, 53208, 53209, 53210, 53212, and 53216</p>
+                    <h4 class="card-subtitle">Contact Information</h4>
+                    <p class="card-text">Milwaukee Health Department</p>
+                    <p class="card-text">841 N Broadway, Room 118, Milwaukee, WI 53202</p>
+                    <p class="card-text">(414) 225-5987 or (414) 286-0387</p>
+                    <a href="http://www.milwaukee.gov/lead-poisoning" target="_blank" class="card-link">www.milwaukee.gov/lead-poisoning</a>
+                </div>
+            </div>
+        </div>
+    <script src="HousingPrograms.js"></script>
+    </body>
+</html>
