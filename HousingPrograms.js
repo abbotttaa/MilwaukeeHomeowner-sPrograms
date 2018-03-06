@@ -240,6 +240,7 @@ const housingPrograms = {
             	"Meinecke": { "min": 3031, "max": 4599 }, "North": { "min": 3000, "max": 4242 }, "Garfield": { "min": 3000, "max": 4499 }, "Spaulding": { "min": 1, "max": 9999 }, "Lloyd": { "min": 3000, "max": 4530 },
             	"Brown": { "min": 3000, "max": 4199 }, "Vine": { "min": 3000, "max": 4199 }, "Roberts": { "min": 3000, "max": 4199 }, "Walnut": { "min": 3000, "max": 4199 }, 
             	"Galena": { "min": 3000, "max": 4199 }, "Cherry": { "min": 3300, "max": 4199 }, "Kisslich": { "min": 3299, "max": 4000 }, "Vliet": { "min": 3499, "max": 4000 }, "McKinley": { "min": 3699, "max": 4000 },
+        	    },
         },
         "incomeEligibility": 80,
         "programId": "home-preservation-program"
