@@ -130,6 +130,7 @@ document.getElementById("button").onclick = function(e){
   e.preventDefault();
   hideAllPrograms(housingPrograms);
   checkAllPrograms(housingPrograms);
+  scrollWin();
 };
 
 const milwaukeeAreaMedianIncome = {
@@ -141,6 +142,17 @@ const milwaukeeAreaMedianIncome = {
     "6": "85100",
     "7": "90940",
     "8": "96820"
+  };
+
+const milwaukeeWeatherizationIncome = {
+    "1": "25151",
+    "2": "32890",
+    "3": "40628",
+    "4": "48367",
+    "5": "56106",
+    "6": "63844",
+    "7": "65295",
+    "8": "66746"
   };
 
 const housingPrograms = {
@@ -212,7 +224,7 @@ const housingPrograms = {
     "weatherizationProgram": {
         "eligibilityRequirements": {
         },
-        "incomeEligibility": null,
+        "incomeEligibility": 100,
         "programId": "weatherization-program"
     },
     "rebuildingTogetherGreaterMilwaukee": {
@@ -267,6 +279,17 @@ const housingPrograms = {
         "eligibilityRequirements": {
             "ownership": ["own"],
             "occupancy": ["yes"],
+            "addressName": {
+                "47th": { "min": 2320, "max": 2399 }, "46th": { "min": 2318, "max": 2399 }, "45th": { "min": 2120, "max": 2399 }, "44th": { "min": 2119, "max": 2399 },
+                "42nd": { "min": 2102, "max": 2254 }, "41st": { "min": 2002, "max": 2399 }, "40th": { "min": 1305, "max": 2399 }, "39th": { "min": 1300, "max": 2399 }, 
+                "38th": { "min": 1301, "max": 2399 }, "37th": { "min": 1300, "max": 2399 }, "36th": { "min": 1300, "max": 2399 }, "35th": { "min": 1400, "max": 2399 },  
+                "34th": { "min": 1400, "max": 2399 }, "33rd": { "min": 1400, "max": 2399 }, "32nd": { "min": 1500, "max": 2399 }, "31st": { "min": 1500, "max": 2399 },
+                "Sherman": { "min": 2124, "max": 2399 }, "Grant": { "min": 2124, "max": 2399 }, 
+                "Lisbon": { "min": 3900, "max": 4431 }, "Sarnow": { "min": 3500, "max": 3823 },
+                "Meinecke": { "min": 3031, "max": 4599 }, "North": { "min": 3000, "max": 4242 }, "Garfield": { "min": 3000, "max": 4499 }, "Spaulding": { "min": 1, "max": 9999 }, "Lloyd": { "min": 3000, "max": 4530 },
+                "Brown": { "min": 3000, "max": 4199 }, "Vine": { "min": 3000, "max": 4199 }, "Roberts": { "min": 3000, "max": 4199 }, "Walnut": { "min": 3000, "max": 4199 }, 
+                "Galena": { "min": 3000, "max": 4199 }, "Cherry": { "min": 3300, "max": 4199 }, "Kisslich": { "min": 3299, "max": 4000 }, "Vliet": { "min": 3499, "max": 4000 }, "McKinley": { "min": 3699, "max": 4000 },
+                },
         },
         "incomeEligibility": null,
         "programId": "washington-park-neighborhood-improvement-project"
@@ -282,6 +305,10 @@ const housingPrograms = {
         "incomeEligibility": 80,
         "programId": "lead-poisoning-prevention-program"
     }
+}
+
+function scrollWin() {
+    window.scrollBy(0, 825);
 }
 
 function addHiddenClass(id){
@@ -314,7 +341,7 @@ function checkProgramEligibility(housingProgram){
             incorrectResponse += checkEligibilityRequirements(housingProgram[key]);
         }
         if(key === "incomeEligibility"){
-            if(!checkIncomeEligibility(housingProgram[key])){
+            if(!checkIncomeEligibility(housingProgram[key], housingProgram.programId)){
                 incorrectResponse ++;
             }
         }
@@ -368,10 +395,16 @@ function checkFullAddress(checkedStreet, rangeArray){
 	}
 }
 
-function checkIncomeEligibility(maxIncomePercentAllowed){
+function checkIncomeEligibility(maxIncomePercentAllowed, program){
     let familySize = document.forms.form.elements.familySize.value;
     let income = document.forms.form.elements.income.value;
-    let medianIncome = getIncomeForFamilySize(familySize);
+    let medianIncome;
+    if(program === "weatherization-program"){
+        medianIncome = getIncomeForFamilySizeWeatherization(familySize);
+    }
+    else{
+        medianIncome = getIncomeForFamilySize(familySize);
+    }
     if(income <= ((maxIncomePercentAllowed/100) * medianIncome) || maxIncomePercentAllowed === null) {
       return true;
     }
@@ -381,6 +414,13 @@ function getIncomeForFamilySize(familySize){
     for(var key in milwaukeeAreaMedianIncome){
         if(key == familySize){
             return milwaukeeAreaMedianIncome[key];
+        }
+    }
+}
+function getIncomeForFamilySizeWeatherization(familySize){
+    for(var key in milwaukeeWeatherizationIncome){
+        if(key == familySize){
+            return milwaukeeWeatherizationIncome[key];
         }
     }
 }
