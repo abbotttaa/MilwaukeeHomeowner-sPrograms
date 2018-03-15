@@ -186,7 +186,73 @@ const housingPrograms = {
             "occupancy": ["yes"],
             "propertyTax": ["yes"],
             "mortgage": ["yes", "noMortgage"],
+            "addressName": {
+                "Beerline": {
+                    // Beerline Horizontal
+                    "Capitol": { "min": 3000, "max": 3999 }, "Melvina": { "min": 3000, "max": 3999 }, "Abert": { "min": 3000, "max": 3999 }, "Vienna": { "min":1000  , "max": 3999 },
+                    "Keefe": { "min": 99, "max":  499}, "Townsend": { "min": 99, "max": 499 }, "Concordia": { "min": 99, "max": 499 },  
+                    // Beerline Vertical
+                    "4th": { "min": 3500, "max": 3999 }, "3rd": { "min": 3500, "max": 3999 }, "2nd": { "min": 3500, "max": 3799 }, "1st": { "min": 3300, "max": 3799 },  
+                    "Palmer": { "min":3300, "max": 3799 }, "Hubbard": { "min": 3300, "max": 3799 }, "Richards": { "min": 3300 , "max": 3499 }, "Holton": { "min": 3300, "max": 3500 },
+                    "Buffum": { "min": 3300, "max": 3500 },
+                },
 
+                "Broady": {
+                    // Broady Horizontal
+                    "Thurston": { "min": 5121, "max": 5823 },"Carmen": { "min": 5502, "max": 5998 }, "Silver Spring": { "min": 5602, "max": 5820 },
+                    // Broady Vertical
+                    "60th": { "min": 5600, "max": 5739 },"58th": { "min": 5643, "max": 5735 },"57th": { "min": 5625, "max": 5735 },"56th": { "min": 5665, "max": 5735 },
+                    "55th": { "min": 5682, "max": 5750 },
+                },
+
+                "Century City": {
+                    // Century City Horizontal
+                    "Capital": { "min": 2605, "max": 3301 }, "Roosevelt": { "min": 3517, "max": 3527 }, "Townsend": { "min": 2601, "max": 2999 }, "Burleigh": { "min": 2708, "max": 3410 },
+                    "Hopkins": { "min": 2523, "max": 2527 }, "Concordia": { "min": 2523, "max": 2527 },
+                    // Century City Vertical
+                    "36th": { "min": 3201, "max": 3985 },"35th": { "min": 3122, "max": 3955 },"34th": { "min": 3104, "max": 3274 }, "33rd": { "min": 3101, "max": 3266 },"32nd": { "min": 3204, "max": 3257 },
+                    "30th": { "min": 3100, "max": 3980 },"29th": { "min": 3108, "max": 3980 },"28th": { "min": 3103, "max": 3979 }, "27th": { "min": 3119, "max": 3979 },"26th": { "min": 3539, "max": 3966 },
+                },
+
+                "Layton Blvd": {
+                // Layton Blvd Vertical
+                    "31st": { "min": 701, "max": 1133 }, "30th": { "min": 702, "max": 1142 }, "29th": { "min": 700, "max": 1140 }, "28th": { "min": 702, "max": 1145 }, "Layton": { "min": 927, "max": 1147 },
+                    "26th": { "min": 725, "max": 1139 }, "25th": { "min": 705, "max": 1133 }, "24th": { "min": 704, "max": 1139 },
+                    // Layton Blvd Horizontal
+                    "Pierce": { "min": 2403, "max": 3029 }, "National": { "min": 2405, "max": 3029 }, "Mineral": { "min": 2417, "max": 2612 }, "Scott": { "min": 2411, "max": 2622 }, 
+                },
+
+                "Lighthouse": {
+                    //Lighthouse Vertical
+                    "72nd": { "min": 5620, "max": 5950 }, "71st": { "min": 5738, "max": 5971 }, "70th": { "min": 5621, "max": 5970 }, "69th": { "min": 5606, "max": 5958 }, "68th": { "min": 5620, "max": 5974 },
+                    "67th": { "min": 5620, "max": 5974 },
+                    //Lighthouse Horizontal
+                    "Silver Spring": { "min": 6704, "max": 7136 }, "Thurston": { "min": 6700, "max": 7167 }, "Carmen": { "min": 6700, "max": 7130 }, "Florist": { "min": 6701, "max": 7137 },
+                },
+
+                "Triblock": {
+                    //Triblock Vertical
+                    "56th": { "min": 2718, "max": 5511 }, "55th": { "min": 2720, "max": 3070 }, "54th": { "min": 2700, "max": 3067 }, "53rd": { "min": 2712, "max": 3073 }, "Burleigh": { "min": 5511, "max": 5877 },
+                    //Triblock Horizontal
+                    "Locust": { "min": 5318, "max": 5425 }, "Center": { "min": 5310, "max": 5530 },
+                },
+
+                "Walker Square": {
+                    //Walker Square Vertical
+                    "Cesar Chavez": { "min": 916, "max": 1036 }, "15th": { "min": 912, "max": 1139 }, "14th": { "min": 915, "max": 1134 }, "12th": { "min": 907, "max": 1137 }, "11th": { "min": 907, "max": 1138 },
+                    "10th": { "min": 900, "max": 1139 }, "9th": { "min": 903, "max": 1139 },
+                    //Walker Square Horizontal
+                    "Walker": { "min": 915, "max": 1557 }, "Mineral": { "min": 902, "max": 1547 }, "Washington": { "min": 1005, "max": 1553 }, "Elgin": { "min": 1201, "max": 1498 }, "Scott": { "min": 910, "max": 1566 },
+                },
+
+                "Washington Park": {
+                    //Washington Park Vertical
+                    "35th": { "min": 1612, "max": 2052 }, "34th": { "min": 1611, "max": 2054 }, "33rd": { "min": 1611, "max": 2053 }, "32nd": { "min": 1604, "max": 2061 },
+                    //Washington Park Horizontal
+                    "Lloyd": { "min": 1604, "max": 2061 }, "Brown": { "min": 3320, "max": 3499 }, "Vine": { "min": 3201, "max": 3499 }, "Lisbon": { "min": 3200, "max": 3396 }, "Walnut": { "min": 3201, "max": 3426 },
+                    "Galena": { "min": 3200, "max": 3450 },
+                },
+            },
         },
         "incomeEligibility": 80,
         "programId": "targeted-investment-neighborhoods"
@@ -198,7 +264,8 @@ const housingPrograms = {
             "propertyTax": ["yes"],
             "mortgage": ["yes", "noMortgage"],
             "utilities": ["yes"],
-            "homeownersInsurance": ["yes"]
+            "homeownersInsurance": ["yes"],
+            "neighborhood": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "141", "15", "16", "17", "18"],
         },
         "incomeEligibility": 60,
         "programId": "neighborhood-improvement-project"
@@ -368,8 +435,18 @@ function checkEligiblityParameter(eligibilityKey, correctSelectionArray){
 	//var userInput = document.forms.form.elements[eligibilityKey].value;
 	if(eligibilityKey === "addressName"){
 		for(var key in correctSelectionArray){
-    		if(checkFullAddress(key, correctSelectionArray[key])){
-    			return true;
+            const potentialTin = correctSelectionArray[key];
+            if(Object.keys(potentialTin).length > 2){
+                for(var tinZone in potentialTin){
+                    if(checkFullAddress(tinZone, potentialTin[tinZone])){
+                        return true;
+                    }
+                }
+            }
+    		else{
+                if(checkFullAddress(key, correctSelectionArray[key])){
+    			 return true;
+                }
     		}
     	}
     	return false;
